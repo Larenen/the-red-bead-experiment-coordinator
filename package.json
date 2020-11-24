@@ -1,7 +1,7 @@
 {
   "name": "the-red-bead-experiment",
   "homepage": "./",
-  "main": "./electron/main.js",
+  "main": "./public/electron.js",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -9,7 +9,6 @@
     "@testing-library/react": "^11.2.1",
     "@testing-library/user-event": "^12.2.2",
     "concurrently": "^5.3.0",
-    "electron-builder": "^22.9.1",
     "electron-is-dev": "^1.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -22,8 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "ebuild": "npm run build && node_modules/.bin/build",
-    "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\""
+    "electron-build": "npm run build && electron-builder --publish=always -mw",
+    "electron-dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "electron": "^11.0.3"
+    "electron": "^11.0.3",
+    "electron-builder": "^22.9.1"
   }
 }
