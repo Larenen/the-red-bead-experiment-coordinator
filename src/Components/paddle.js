@@ -5,7 +5,7 @@ import redBead from '../red-bead.png';
 import emptyHole from '../empty-hole.png';
 
 const items = 5 * 10;
-const weights = [0.2, 0.8]; // probabilities
+const weights = [0.02, 0.98]; // probabilities
 const results = [0, 1]; // values to return
 
 export default function Paddle(props) {
@@ -44,11 +44,9 @@ function updatePaddle() {
 
 export function shakePaddle(beadsArray) {
     let arrayCopy = [...beadsArray]
-    for(let i = 0; i < 2; i++){
-        const randomBeadToChange = getRndInteger(0, items - 1);
-        const isRed = arrayCopy[randomBeadToChange].props.src.includes("media/red");
-        arrayCopy[randomBeadToChange] = <img key={randomBeadToChange} className="bead" alt="bead" src={isRed ? whiteBead : redBead} />
-    }
+    const randomBeadToChange = getRndInteger(0, items - 1);
+    const isRed = arrayCopy[randomBeadToChange].props.src.includes("media/red");
+    arrayCopy[randomBeadToChange] = <img key={randomBeadToChange} className="bead" alt="bead" src={isRed ? whiteBead : redBead} />
 
     return arrayCopy;
 }

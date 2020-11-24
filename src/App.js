@@ -6,6 +6,7 @@ import { initPaddle, shakePaddle } from './Components/paddle';
 
 function App() {
   const [beads, setBeads] = useState(initPaddle());
+  const [initStep, setInitStep] = useState(true);
   const [firstPassed, setFirstPassed] = useState(false);
   const [secondPassed, setSecondPassed] = useState(false);
   const [thirdPassed, setThirdPassed] = useState(false);
@@ -24,7 +25,8 @@ function App() {
   return (
     <div className="App">
       <h1>Krok pierwszy:</h1>
-      <button className="button" onClick={() => {
+      <button className="button" disabled={!initStep} onClick={() => {
+        setInitStep(false);
         setFirstPassed(true);
         setBeads(initPaddle());
 
@@ -55,6 +57,7 @@ function App() {
       />
       <button className="button" disabled={!fourthPassed} onClick={() => {
         setBeads(shakePaddle(beads));
+        setInitStep(true);
         setFirstPassed(false);
         setSecondPassed(false);
         setThirdPassed(false);
