@@ -1,15 +1,20 @@
 {
-  "homepage": "https://larenen.github.io/the-red-bead-experiment/",
   "name": "the-red-bead-experiment",
+  "homepage": "./",
+  "main": "./electron/main.js",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.1",
     "@testing-library/user-event": "^12.2.2",
+    "concurrently": "^5.3.0",
+    "electron-builder": "^22.9.1",
+    "electron-is-dev": "^1.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
+    "wait-on": "^5.2.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -17,8 +22,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+    "ebuild": "npm run build && node_modules/.bin/build",
+    "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +44,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "electron": "^11.0.3"
   }
 }
