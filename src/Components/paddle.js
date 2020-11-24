@@ -5,8 +5,6 @@ import redBead from '../red-bead.png';
 import emptyHole from '../empty-hole.png';
 
 const items = 5 * 10;
-const weights = [0.02, 0.98]; // probabilities
-const results = [0, 1]; // values to return
 
 export default function Paddle(props) {
     return(
@@ -34,9 +32,13 @@ export function initPaddle() {
 
 function updatePaddle() {
     let beads = []
-
     for(let i = 0; i < items; i++) {
-        beads.push(<img key={i} className="bead" alt="bead" src={getRandomBeadColor() === 0 ? redBead : whiteBead}/>)
+        beads.push(<img key={i} className="bead" alt="bead" src={ whiteBead }/>)
+    }
+
+    for(let i = 0; i < 2; i++) {
+        const randomBeadToChange = getRndInteger(0, items - 1);
+        beads[randomBeadToChange] = <img key={i} className="bead" alt="bead" src={ redBead }/>
     }
 
     return beads;
@@ -50,21 +52,6 @@ export function shakePaddle(beadsArray) {
 
     return arrayCopy;
 }
-
-function getRandomBeadColor () {
-    var num = Math.random(),
-        s = 0,
-        lastIndex = weights.length - 1;
-
-    for (var i = 0; i < lastIndex; ++i) {
-        s += weights[i];
-        if (num < s) {
-            return results[i];
-        }
-    }
-
-    return results[lastIndex];
-};
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
