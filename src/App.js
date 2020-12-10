@@ -50,7 +50,7 @@ function App() {
       <h1>Krok trzeci:</h1>
       <Paddle isEnabled={secondPassed} beads={beads} setBeads={setBeads} setStepPassed={setThirdPassed}/>
 
-      <h1 h1>Krok czwarty:</h1>
+      <h1>Krok czwarty:</h1>
       <AdditionalOptions 
         number={2} isEnabled={thirdPassed} right={rightStepFour} setRight={setRightStepFour} left={leftStepFour} setLeft={setLeftStepFour}
         down={downStepFour} setDown={setDownStepFour} up={upStepFour} setUp={setUpStepFour} setStepPassed={setFourthPassed}

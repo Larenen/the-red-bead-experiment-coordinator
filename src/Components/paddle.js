@@ -39,7 +39,7 @@ function updatePaddle() {
     const redBeadsToPlace = getRndInteger(4, 5);
     for(let i = 0; i < redBeadsToPlace; i++) {
         const randomBeadToChange = getRndInteger(0, items - 1);
-        beads[randomBeadToChange] = <img key={i} className="bead" alt="bead" src={ redBead }/>
+        beads[randomBeadToChange] = <img key={randomBeadToChange} className="bead" alt="bead" src={ redBead }/>
     }
 
     return beads;
