@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/the-red-bead-experiment-coordinator/static/css/main.b7cf4327.chunk.css",
-    "main.js": "/the-red-bead-experiment-coordinator/static/js/main.d4905e42.chunk.js",
-    "main.js.map": "/the-red-bead-experiment-coordinator/static/js/main.d4905e42.chunk.js.map",
+    "main.js": "/the-red-bead-experiment-coordinator/static/js/main.f287a92b.chunk.js",
+    "main.js.map": "/the-red-bead-experiment-coordinator/static/js/main.f287a92b.chunk.js.map",
     "runtime-main.js": "/the-red-bead-experiment-coordinator/static/js/runtime-main.19805370.js",
     "runtime-main.js.map": "/the-red-bead-experiment-coordinator/static/js/runtime-main.19805370.js.map",
     "static/js/2.c306f80a.chunk.js": "/the-red-bead-experiment-coordinator/static/js/2.c306f80a.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.19805370.js",
     "static/js/2.c306f80a.chunk.js",
     "static/css/main.b7cf4327.chunk.css",
-    "static/js/main.d4905e42.chunk.js"
+    "static/js/main.f287a92b.chunk.js"
   ]
 }
